@@ -11,8 +11,16 @@ const Stack = createNativeStackNavigator<StackNavigationParams>();
 export function AccountNavigator() {
   return (
     <Stack.Navigator initialRouteName="Welcome">
-      <Stack.Screen name="Login" component={SignInComponent} />
-      <Stack.Screen name="Register" component={SignUpComponent} />
+      <Stack.Screen
+        name="Login"
+        component={SignInComponent}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Register"
+        component={SignUpComponent}
+        options={{headerShown: false}}
+      />
       <Stack.Screen
         name="Welcome"
         component={WelcomeComponent}

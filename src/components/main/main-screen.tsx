@@ -4,6 +4,7 @@ import React, {useState} from 'react';
 import {
   Platform,
   SafeAreaView,
+  ScrollView,
   StatusBar,
   StyleSheet,
   Text,
@@ -37,42 +38,44 @@ export function MainScreen() {
       <View style={styles.box}>
         <Text style={styles.title}>Production Processes</Text>
 
-        <Input
-          placeholder="Serial Number"
-          value={input.serialnumber}
-          onChangeText={value => setInput({...input, serialnumber: value})}
-        />
-        <Input
-          placeholder="Login"
-          value={input.login}
-          onChangeText={value => setInput({...input, login: value})}
-        />
-        <Input
-          placeholder="Done Date time"
-          value={input.done_dateTime}
-          onChangeText={value => setInput({...input, done_dateTime: value})}
-        />
+        <ScrollView>
+          <Input
+            placeholder="Serial Number"
+            value={input.serialnumber}
+            onChangeText={value => setInput({...input, serialnumber: value})}
+          />
+          <Input
+            placeholder="Login"
+            value={input.login}
+            onChangeText={value => setInput({...input, login: value})}
+          />
+          <Input
+            placeholder="Done Date time"
+            value={input.done_dateTime}
+            onChangeText={value => setInput({...input, done_dateTime: value})}
+          />
 
-        <Input
-          placeholder="Set Production"
-          value={input.set_production_process_id}
-          onChangeText={value =>
-            setInput({...input, set_production_process_id: value})
-          }
-        />
-        <Input
-          placeholder="Process done"
-          value={input.process_done}
-          onChangeText={value => setInput({...input, process_done: value})}
-        />
-        <Input
-          placeholder="Note"
-          value={input.note}
-          onChangeText={value => setInput({...input, note: value})}
-        />
-        <View style={{marginTop: 40}}>
-          <AppButton title="Confirm" onPress={onSave} />
-        </View>
+          <Input
+            placeholder="Set Production"
+            value={input.set_production_process_id}
+            onChangeText={value =>
+              setInput({...input, set_production_process_id: value})
+            }
+          />
+          <Input
+            placeholder="Process done"
+            value={input.process_done}
+            onChangeText={value => setInput({...input, process_done: value})}
+          />
+          <Input
+            placeholder="Note"
+            value={input.note}
+            onChangeText={value => setInput({...input, note: value})}
+          />
+          <View style={{marginTop: 40}}>
+            <AppButton title="Confirm" onPress={onSave} />
+          </View>
+        </ScrollView>
       </View>
     </SafeAreaView>
   );
