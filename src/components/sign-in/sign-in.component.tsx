@@ -1,5 +1,4 @@
 import {
-  Image,
   Platform,
   Pressable,
   StatusBar,
@@ -7,9 +6,8 @@ import {
   Text,
   View,
 } from 'react-native';
-import React, {useState} from 'react';
+import React from 'react';
 import {Input} from '../../ui-component/input/input.component';
-import {AppSwitch} from '../../ui-component/switch/switch.component';
 import AppButton from '../../ui-component/button/button.component';
 import {LoginProps} from '../../navigation/type/type';
 import {Screen} from '../../ui-component/screen/screen.component';
@@ -22,15 +20,8 @@ const validationSchema = Yup.object().shape({
 });
 
 export default function SignInComponent({navigation}: LoginProps) {
-  const defaultInput = {
-    rememberMe: false,
-    faceUnlock: false,
-  };
-  const [input, setInput] = useState(defaultInput);
-
   async function onSave(values: any, onSubmitProps: any) {
     onSubmitProps.resetForm();
-    setInput(defaultInput);
     navigation.push('AppNavigator');
   }
   return (
@@ -70,25 +61,6 @@ export default function SignInComponent({navigation}: LoginProps) {
             {touched.password && (
               <Text style={{color: 'red'}}>{errors.password}</Text>
             )}
-            <View style={styles.switchesContainer}>
-              <AppSwitch
-                title="rememeber me"
-                value={input.rememberMe}
-                onValueChange={value => {
-                  console.log('rememeber', value);
-                  setInput({...input, rememberMe: value});
-                }}
-              />
-              <AppSwitch
-                title="face unclock"
-                value={input.faceUnlock}
-                onValueChange={value => {
-                  console.log('face', value);
-
-                  setInput({...input, faceUnlock: value});
-                }}
-              />
-            </View>
 
             <AppButton title="SIGN IN" onPress={() => handleSubmit()} />
 

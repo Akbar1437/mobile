@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import {
   ActivityIndicator,
-  Image,
   Platform,
   Pressable,
   SafeAreaView,
@@ -16,8 +15,7 @@ import {RegisterProps} from '../../navigation/type/type';
 
 export function SignUpComponent({navigation}: RegisterProps) {
   const defaultInput = {
-    name: '',
-    lastName: '',
+    userName: '',
     email: '',
     password: '',
     confirmPassword: '',
@@ -29,7 +27,7 @@ export function SignUpComponent({navigation}: RegisterProps) {
   // =============================
 
   async function onSave() {
-    if (!input.name) return;
+    if (!input.userName) return;
     setDisabled(true);
     setErrorMessage('');
 
@@ -54,15 +52,9 @@ export function SignUpComponent({navigation}: RegisterProps) {
           />
         )}
         <Input
-          placeholder="FIRST NAME"
-          value={input.name}
-          onChangeText={value => setInput({...input, name: value})}
-          editable={!disabled}
-        />
-        <Input
-          placeholder="LAST NAME"
-          value={input.lastName}
-          onChangeText={value => setInput({...input, lastName: value})}
+          placeholder="USERNAME"
+          value={input.userName}
+          onChangeText={value => setInput({...input, userName: value})}
           editable={!disabled}
         />
         <Input
@@ -99,10 +91,6 @@ export function SignUpComponent({navigation}: RegisterProps) {
               })
             }>
             <Text style={styles.text}>LOGIN</Text>
-          </Pressable>
-          <Text style={[styles.text, {marginHorizontal: 10}]}>|</Text>
-          <Pressable disabled={disabled} onPress={() => {}}>
-            <Text style={styles.text}>GOOGLE ACCOUNT</Text>
           </Pressable>
         </View>
       </View>
