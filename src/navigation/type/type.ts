@@ -11,6 +11,7 @@ export type StackNavigationParams = {
   LogOut: undefined;
   AppNavigator: undefined;
   AnotherPage: undefined;
+  ScannerBarcode: undefined;
 };
 
 export type LoginProps = NativeStackScreenProps<StackNavigationParams, 'Login'>;
@@ -26,6 +27,10 @@ export type WelcomeProps = NativeStackScreenProps<
 export type AnotherPageProps = NativeStackScreenProps<
   StackNavigationParams,
   'AnotherPage'
+>;
+export type ScannerBarcodeProps = NativeStackScreenProps<
+  StackNavigationParams,
+  'ScannerBarcode'
 >;
 
 // ------------------------drawerNavigation-----------

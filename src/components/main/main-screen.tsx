@@ -80,6 +80,9 @@ export function MainScreen() {
         <Pressable onPress={() => navigation.navigate('AnotherPage')}>
           <Text> go to another page</Text>
         </Pressable>
+        <Pressable onPress={() => navigation.navigate('ScannerBarcode')}>
+          <Text> go to ScannerBarcode page</Text>
+        </Pressable>
       </View>
     </SafeAreaView>
   );

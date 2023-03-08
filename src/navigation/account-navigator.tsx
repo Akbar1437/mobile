@@ -4,6 +4,7 @@ import {AnotherPageComponent} from '../components/another-page/another.page.comp
 import SignInComponent from '../components/sign-in/sign-in.component';
 import {SignUpComponent} from '../components/sign-up/sign-up.component';
 import {WelcomeComponent} from '../components/welcome/welcome.component';
+import ScannerBarcodeComponent from '../scanner-barcode.component';
 import {AppNavigator} from './app-navigator';
 import {StackNavigationParams} from './type/type';
 
@@ -30,6 +31,11 @@ export function AccountNavigator() {
       <Stack.Screen
         name="AnotherPage"
         component={AnotherPageComponent}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="ScannerBarcode"
+        component={ScannerBarcodeComponent}
         options={{headerShown: false}}
       />
       <Stack.Screen
