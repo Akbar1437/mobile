@@ -3,6 +3,7 @@ import {useNavigation} from '@react-navigation/native';
 import React, {useState} from 'react';
 import {
   Platform,
+  Pressable,
   SafeAreaView,
   ScrollView,
   StatusBar,
@@ -76,6 +77,9 @@ export function MainScreen() {
             <AppButton title="Confirm" onPress={onSave} />
           </View>
         </ScrollView>
+        <Pressable onPress={() => navigation.navigate('AnotherPage')}>
+          <Text> go to another page</Text>
+        </Pressable>
       </View>
     </SafeAreaView>
   );

@@ -10,6 +10,7 @@ export type StackNavigationParams = {
   MainScreen: undefined;
   LogOut: undefined;
   AppNavigator: undefined;
+  AnotherPage: undefined;
 };
 
 export type LoginProps = NativeStackScreenProps<StackNavigationParams, 'Login'>;
@@ -20,6 +21,11 @@ export type RegisterProps = NativeStackScreenProps<
 export type WelcomeProps = NativeStackScreenProps<
   StackNavigationParams,
   'Welcome'
+>;
+
+export type AnotherPageProps = NativeStackScreenProps<
+  StackNavigationParams,
+  'AnotherPage'
 >;
 
 // ------------------------drawerNavigation-----------
